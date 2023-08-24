@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-list>
+      <ion-button expand="full" (click)="accionBoton1()">Fibonacci</ion-button>
+      <ion-button expand="full" (click)="accionBoton2()">Factorial</ion-button>
+      <ion-button expand="full" (click)="accionBoton3()">Primos</ion-button>
+      <ion-button expand="full" (click)="accionBoton4()">Pares e impares</ion-button>
+      <ion-button expand="full" (click)="accionBoton5()">Conjuntos</ion-button>
+    </ion-list>
+  </div>
+</ion-content>
