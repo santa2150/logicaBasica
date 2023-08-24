@@ -22,6 +22,18 @@
       Dado un número ingresado por el usuario generar la serie Fibonacci hasta la posición del número ingresado.
     </ion-card-content>
   </ion-card>
-
 </ion-content>
 
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Ingrese el número:</ion-label>
+    <ion-input type="number" [(ngModel)]="numeroIngresado"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="calcularFibonacci(numeroIngresado)">Calcular</ion-button>
+  
+  <ion-list *ngIf="fibonacciSeries.length > 1">
+    <ion-item *ngFor="let numero of fibonacciSeries; let i = index">
+      Posición {{ i }}: {{ numero }}
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>conjun</ion-title>
+    <ion-title>Conjuntos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,43 @@
       <ion-title size="large">conjun</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-button (click)="volver()">Volver</ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ejercicio</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Dado dos conjuntos de números A y B, se podrá calcular A∩B, A∪B, A no pertenece a B y B no pertenece a A. El usuario podrá ingresar los dos conjuntos cuya longitud es variable y puede seleccionar que operación realizar.  
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Conjunto A (separado por comas):</ion-label>
+    <ion-input type="text" [(ngModel)]="conjuntoA"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Conjunto B (separado por comas):</ion-label>
+    <ion-input type="text" [(ngModel)]="conjuntoB"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Operación:</ion-label>
+    <ion-select [(ngModel)]="operacionSeleccionada">
+      <ion-select-option value="interseccion">Intersección (A∩B)</ion-select-option>
+      <ion-select-option value="union">Unión (A∪B)</ion-select-option>
+      <ion-select-option value="diferenciaA">A no pertenece a B</ion-select-option>
+      <ion-select-option value="diferenciaB">B no pertenece a A</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button expand="full" (click)="calcularOperacion()">Calcular Operación</ion-button>
+  
+  <ion-list *ngIf="resultado.length > 0">
+    <ion-item *ngFor="let num of resultado">
+      {{ num }}
+    </ion-item>
+  </ion-list>
 </ion-content>

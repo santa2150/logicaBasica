@@ -1,13 +1,46 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>par</ion-title>
+    <ion-title>pares e impares</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">par</ion-title>
+      <ion-title size="large">pares e impares</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-button (click)="volver()">Volver</ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ejercicio</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Calcular los número pares o impares de un número ingresado por el usuario. El usuario podrá definir si solo quiere
+      ver los números pares o solo los número impares </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Ingrese el número:</ion-label>
+    <ion-input type="number" [(ngModel)]="numeroIngresado"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Tipo:</ion-label>
+    <ion-select [(ngModel)]="tipoSeleccionado">
+      <ion-select-option value="pares">Pares</ion-select-option>
+      <ion-select-option value="impares">Impares</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button expand="full" (click)="calcularNumeros()">Calcular Números</ion-button>
+  
+  <ion-list *ngIf="numerosResultado.length > 0">
+    <ion-item *ngFor="let numero of numerosResultado">
+      {{ numero }}
+    </ion-item>
+  </ion-list>
 </ion-content>

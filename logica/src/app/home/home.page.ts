@@ -11,6 +11,15 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule, RouterModule],
 })
 export class HomePage {
+
+  opciones = [
+    { label: 'Fibonacci' },
+    { label: 'Factorial' },
+    { label: 'Primos' },
+    { label: 'Pares e impares' },
+    { label: 'Conjuntos' },
+  ];
+
   constructor(private router: Router) {}
 
   accionBoton1():void {
@@ -28,4 +37,5 @@ export class HomePage {
   accionBoton5() {
     this.router.navigateByUrl ('conjun');
   }
+
 }

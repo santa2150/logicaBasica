@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>primo</ion-title>
+    <ion-title>Numeros primos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,30 @@
       <ion-title size="large">primo</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-button (click)="volver()">Volver</ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ejercicio</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Dado un número ingresado por el usuario calcular los número primos menores a dicho número.
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Ingrese el número:</ion-label>
+    <ion-input type="number" [(ngModel)]="numeroIngresado"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="calcularPrimos()">Calcular Números Primos</ion-button>
+  
+  <ion-list *ngIf="numerosPrimos.length > 0">
+    <ion-item *ngFor="let primo of numerosPrimos">
+      {{ primo }}
+    </ion-item>
+  </ion-list>
 </ion-content>

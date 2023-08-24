@@ -27,4 +27,19 @@ export class FiboPage implements OnInit {
     this.router.navigateByUrl('home');
   }
 
+  numeroIngresado: number=1;
+  fibonacciSeries: number[] = [];
+
+  calcularFibonacci(n: number) {
+    this.fibonacciSeries = this.generateFibonacciSeries(n);
+  }
+
+  private generateFibonacciSeries(n: number): number[] {
+    const series = [0, 1];
+    for (let i = 2; i < n; i++) {
+      series[i] = series[i - 1] + series[i - 2];
+    }
+    return series;
+  }
+
 }
